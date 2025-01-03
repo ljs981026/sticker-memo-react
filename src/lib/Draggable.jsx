@@ -37,8 +37,9 @@ const Draggable = ({children, handleRef, onMove, x, y}) => {
     handle.addEventListener("mousedown", onMouseDown);
     return () => {
       handle.removeEventListener("mousedown", onMouseDown);
+      Move.cancel()
     }
-  }, [handleRef, onMouseDown])
+  }, [handleRef, onMouseDown, Move])
 
   return (
     <div ref={dragRef} className='draggable' style={{transform: `translate(${position.x}px, ${[position.y]}px)`}}>

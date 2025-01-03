@@ -1,7 +1,8 @@
 {
-  "name": "draggable",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@ljs981026/draggable",
+  "version": "1.0.0",
+  "module": "dist/Draggable.js",
+  "main": "dist/Draggable.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -17,7 +18,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish": "rd /s /q dist && mkdir dist && babel src/lib -d dist --copy-files"
+  },
+  "babel": {
+    "presets": ["@babel/preset-react"]
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/preset-react": "^7.26.3"
   }
 }
